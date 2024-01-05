@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SII Signing</title>
+  <div class="toolbar" role="banner">
+    <table  style="width: 100%;">
+      <tr>
+        <td ><img src="assets/images/sep.png" height="60px"></td>
+        <td></td>
+        <td >
+          <p class="titulo1">Sistema Integral de Información</p>
+          <p class="titulo2">Instituto Tecnológico de Durango</p>
+        </td>
+        <td></td>
+        <td ><img src="assets/images/tecnm.png" height="65px"></td>
+      </tr>
+    </table>
+  </div>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="">
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <!--Esto no es necesario si se utiliza la verficación en backend, esto es una de forma local para la verificación y decodificación del JWT-->
+<script>
+  //Esto es el decodificador del JWT
+  function decodeJWTToken(token) {
+    return JSON.parse(atob(token.split(".")[1]));
+  }
+  //Esto coloca los datos del token en el session storage y despues redirige a la página deseada
+  function handleCredentialResponse(response) {
+    const responsePayload = decodeJWTToken(response.credential);
+    sessionStorage.setItem("loggedInUser", JSON.stringify(responsePayload));
+    var numerocontrol = responsePayload.email;
+    numerocontrol=numerocontrol.split('@')[0];
+    console.log(numerocontrol);
+    window.location.href = "/dashboard";
+  }
+  function handleSignout() {
+    google.accounts.id.disableAutoSelect();
+  }    
+</script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+

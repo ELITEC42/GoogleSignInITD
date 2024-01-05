@@ -1,0 +1,15 @@
+<div class="user-card">
+  <div class="profile-photo">
+    <img [src]="userProfile.picture" alt="Profile Photo" >
+  </div>
+  <div class="user-info">
+    <h2>{{ userProfile.given_name }} {{ userProfile.family_name }}</h2>
+    <p>{{ userProfile.email }}</p>
+    <p>ID: {{ userProfile.sub }}</p>
+    <p>Proveedor del token: {{ userProfile.iss }}</p>
+    <p>Dominio: {{ userProfile.hd }}</p>
+    <p>Mi servidor cliente: {{ userProfile.aud }}</p>
+    <p>Número de control: {{ userProfile.email.split('@')[0] }}</p>
+
+  </div>
+</div>

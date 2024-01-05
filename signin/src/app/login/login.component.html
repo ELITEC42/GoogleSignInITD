@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SII</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <br>
+  <br>
+  <h2>Ingrese!</h2>
+  <div id="g_id_onload"
+     data-client_id=""
+     data-context="signin"
+     data-ux_mode="pop"
+     data-callback="handleCredentialResponse"
+     data-auto_select="false"
+     data-itp_support="true"
+     data-hd="itdurango.edu.mx">
+     <!--Usar: data-login_uri="http://localhost:3000/api/login" para la verificación backend y remplazar: data-callback="handleCredentialResponse"-->
+     <!-- Usar si se quiere data-ux_mode="redirect" junto con la integración de backend, si se coloca sin backend, este tira error de 
+          que no esta haciendo post porque no esta rediriendo a otro lugar, por lo tanto el redirect, requiere forzosamente el login uri-->
+</div>
+
+<div style="width:230px; margin:0 auto;">
+     <div class="g_id_signin"
+          data-type="standard"
+          data-shape="pill"
+          data-theme="outline"
+          data-text="continue_with"
+          data-size="large"
+          data-logo_alignment="left">
+     </div>
+</div>
+</body>
+</html>

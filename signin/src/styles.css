@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Lafayette;
+    src: url(assets/fonts/Laffayette_Comic_Pro.ttf);
+}
+h1 {
+  color: #5a0202;
+  font-family: Lafayette;
+  font-size: 100%;
+}
+h2 {
+  color: #5a0202;
+  font-family: Lafayette;
+  font-size: 200%;
+  text-align: center;
+
+}
+h3 {
+  color: #111;
+  font-family: Consolas;
+  font-size: 250%;
+}
+.titulo1 { font-size: 20px; color: #DEDECA;}
+
+.titulo2 { font-size: 20px; font-weight:bold; color: #DEDECA;  }
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #5a0202;
+  color: #5a0202;
+  font-weight: 600;
+}
+tr, td{
+    padding: 15px;
+}
+.toolbar img {
+  margin: 0 16px;
+}
+body{
+  background-color: #DEDECA;
+}

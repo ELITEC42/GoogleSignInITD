@@ -1,0 +1,15 @@
+<h2>
+  Usuario ha iniciado sesión con éxito
+</h2>
+
+<ng-container *ngIf="userProfile">
+  <div>Bienvenido, {{ userProfile.name }}</div>
+  <app-user-card [userProfile]="userProfile"></app-user-card>
+</ng-container>
+<button id="signout-button" (click)="handleSignOut()">Sign Out</button>
+<!--Además de esta función se debe de hacer el sign out en backend, para ellos se usar una función de Google
+llamada google.accounts.id.disableAutoSelect(), si esto no se hace, se crea un deadloop de incio de sesión (en unos casos simplemente
+no aparece nada en la página), por lo que simplente se deshabilita el la selección automatica de la cuenta, para que no haga el bucle,
+puesto a que como tal no se cierra ya la sesión, sino, que se quita el permiso de entrada automatico al sitio, esto quita la cookie "g_state"
+la cual es la responsable de dicho inicio de sesión, la cual tiene una longevidad aproximada de 6 meses-->
+
